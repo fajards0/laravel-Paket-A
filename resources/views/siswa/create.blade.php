@@ -54,8 +54,12 @@
                                     </div>
                                     <div class="mb-2">
                                         <label for="">Jenis Kelamin</label>
-                                        <input type="text" class="form-control @error('jk') is-invalid @enderror"
+                                        <select type="text" class="form-control @error('jk') is-invalid @enderror"
                                             name="jk">
+                                            <option value="Pilih Jenis Kelamin">Pilih Jenis Kelamin</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
                                         @error('jk')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

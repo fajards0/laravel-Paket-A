@@ -18,9 +18,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Id</th>
                                         <th>Nama Siswa</th>
-                                        <th>Foto</th>
+                                        <th>Jumlah</th>
+                                        <th>Tanggal</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -30,10 +30,9 @@
                                     @foreach ($tabungan as $item)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $item->id_siswa }}</td>
                                             <td>{{ $item->siswa->nama_siswa }}</td>
-                                            <td align="center"><img src="{{ asset('/images/siswa/' . $item->siswa->foto) }}"
-                                                style="width: 100px;" alt="">
+                                            <td>{{$item->jumlah}}</td>
+                                            <td>{{$item->tgl}}</td>
                                         </td>
                                             <td>
                                                 <form action="{{ route('tabungan.destroy', $item->id) }}" id="delete-data"

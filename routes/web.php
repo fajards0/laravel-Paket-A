@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TabunganController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::resource('siswa', SiswaController::class);
 Route::resource('tabungan', TabunganController::class);
+});
+
+Route::get('/', [FrontController::class, 'tabungan']);
+Route::get('tabungan/{id}', [FrontController::class, 'detailtabungan']);

@@ -38,8 +38,7 @@
                                 <div class="col">
                                     <div class="mb-2">
                                         <label for="kelas">Kelas</label>
-                                        <input type="number"
-                                            class="form-control @error('kelas') is-invalid @enderror"
+                                        <input type="number" class="form-control @error('kelas') is-invalid @enderror"
                                             name="kelas" value="{{ old('kelas', $siswa->kelas) }}">
                                         @error('kelas')
                                             <span class="invalid-feedback" role="alert">
@@ -53,8 +52,7 @@
 
                                 <label for="foto">Foto</label>
                                 @if ($siswa->foto)
-                                    <p><img src="{{ asset('images/siswa/' . $siswa->foto) }}" alt="foto"
-                                            width="100px">
+                                    <p><img src="{{ asset('images/siswa/' . $siswa->foto) }}" alt="foto" width="100px">
                                     </p>
                                 @endif
                                 <input type="file" name="foto"
@@ -70,8 +68,12 @@
                                 <div class="col">
                                     <div class="mb-2">
                                         <label for="jk">Jenis Kelamin</label>
-                                        <input type="text" class="form-control @error('jk') is-invalid @enderror"
+                                        <select type="text" class="form-control @error('jk') is-invalid @enderror"
                                             name="jk" value="{{ old('jk', $siswa->jk) }}">
+                                            <option value="Pilih Jenis Kelamin">Pilih Jenis Kelamin</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
                                         @error('jk')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
